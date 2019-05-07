@@ -18,6 +18,7 @@ class FilmDeSaisie  extends React.Component {
     }
     submitFrom(e){
         e.preventDefault();
+        const url ="http://campus-bordeaux.ovh:3001/api/quests/movies/"
         const config ={
             method: "POST",
             headers: {
@@ -25,7 +26,7 @@ class FilmDeSaisie  extends React.Component {
             },
             body: JSON.stringify(this.state),
         };
-        fetch("", config)
+        fetch(url, config)
         .then(res => res.json())
         .then(res => {
             if(res.error) {
